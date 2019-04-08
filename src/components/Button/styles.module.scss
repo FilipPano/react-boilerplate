@@ -1,0 +1,18 @@
+@import "~global/styles";
+
+.button {
+  height: 40px;
+  width: 180px;
+  background-color: $main-color;
+  color: #FFFFFF;
+  font-family: $font-family;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 2px #000000;
+}
