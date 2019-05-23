@@ -2,7 +2,7 @@
 
 ### Project Setup
 
-1. Clone the project from GitHub: https://github.com/FilipPano/css-snippets-fe
+1. Clone the project from GitHub: https://bitbucket.org/filippano/react-boilerplate/src/master/
 
 1. Run **`yarn install`** (Yarn is required on your local machine)
 
