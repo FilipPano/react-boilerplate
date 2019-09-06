@@ -9,20 +9,31 @@
     ],
     "react/prop-types": 0,
     "react/jsx-one-expression-per-line": "off",
+    "react/no-array-index-key": "off",
     "no-underscore-dangle": 0,
     "import/imports-first": ["off", "off"],
     "import/newline-after-import": "error",
     "linebreak-style": "off",
+    "no-plusplus": "off",
     "padded-blocks": "off",
     "no-trailing-spaces": "off",
+    "max-len": "off",
     "import/no-unresolved": "off",
     "import/no-absolute-path": "off",
     "import/order": "off",
     "import/named": "off",
     "no-shadow": "off",
-    "max-len": ["error", { "code": 500 }],
     "object-curly-newline": "off",
-    "spaced-comment": "off"
+    "spaced-comment": "off",
+    "react/button-has-type": [true, {
+      "button": true,
+      "submit": true,
+      "reset": true
+    }],
+    "global-require": 0,
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off"
   },
   "globals": {
     "window": true,

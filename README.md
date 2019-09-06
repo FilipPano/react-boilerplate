@@ -2,7 +2,7 @@
 
 ### Project Setup
 
-1. Clone the project from GitHub: https://bitbucket.org/filippano/react-boilerplate/src/master/
+1. Clone the project from GitHub: https://github.com/FilipPano/react-boilterplate
 
 1. Run **`yarn install`** (Yarn is required on your local machine)
 
@@ -24,13 +24,13 @@ We have a tree structure as following:
     > The project’s assets that are used throughout the application are stored here.
 
     - **`icons`**
-    > Contains all icons as Functional Components
+    > Contains all icons as Components
 
-    - **`img`**
-    > Contains all images
+    - **`resources`**
+    > Contains all resources like images, videos etc.
 
 - **`components`**
-    > All components that are presentational (can be reused even in different applications) are stored here. They can be either Functional or Smart (contain state which helps with the presentation)
+    > All components that are presentational (can be reused even in different applications) are stored here.
 
 - **`containers`**
     > All components that contain the business logic of the application (are connected to the store or make sense only in this application) are stored here.
@@ -39,16 +39,16 @@ We have a tree structure as following:
     > All variables (global styles too) that are used throughout the application are stored here.
 
 - **`pages`**
-    > All components that represent a React Route are stored here. They can be either Functional or Smart.
+    > All components that represent a React Route are stored here.
     
     > All routes are stored inside the **`App.js`** file.
 
 - **`services`**
-    > All http requests and things that the application should do are stored here.
+    > All http requests and state management that the application should do is stored here.
     
     > Services are grouped based on the types of data and features that the application has (ex: **products, users**) and then further divided into sub-folders which contain a particular object or feature related to that type (ex: inside products we can have: **products-list, selected-product, favorite-products** etc.)
      
-    > Each sub-folder contains the **reducer**, **actions**, **effects** (if needed) and **json** (the json structure that needs to be sent to the backend via the effects (if needed))
+    > Each sub-folder contains the **reducer**, **actions**, **effects** (if needed), **api** (if needed) and models (if needed)
 
 - **`store`**
     > Contains the **redux store**, **root reducer** and **root effect**.
