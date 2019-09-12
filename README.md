@@ -12,7 +12,7 @@
     NODE_PATH=src/
     ```
 
-1. Run **`npm start`** (This will start your project in dev environment)
+1. Run **`yarn start`** (This will start your project in dev environment)
 
 ---
 
