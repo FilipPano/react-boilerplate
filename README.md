@@ -2,8 +2,6 @@
 
 ### Project Setup
 
-1. Clone the project from GitHub: https://github.com/FilipPano/react-boilterplate
-
 1. Run **`yarn install`** (Yarn is required on your local machine)
 
 1. Create a **`.env`** file in the project’s root and copy & paste the following:
