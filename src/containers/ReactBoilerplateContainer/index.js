@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 import Button from 'components/Button';
-import { increaseProductsQuantity } from '../../services/products/product-quantity/actions';
+import { increaseProductsQuantity } from 'services/products/product-quantity/actions';
 import { connect } from 'react-redux';
 
 const ReactBoilerPlateContainer = ({ productQuantity, increaseProductQuantity }) => (
