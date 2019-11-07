@@ -1,0 +1,13 @@
+@import "~global/styles";
+
+.container {
+  display: grid;
+  align-items: center;
+  max-width: 1600px;
+  margin: auto;
+  padding: 25px 200px;
+
+  @include for-tablet-and-less {
+    padding: 25px;
+  }
+}

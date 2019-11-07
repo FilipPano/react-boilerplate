@@ -1,9 +1,8 @@
 import { all } from 'redux-saga/effects';
-import productQuantityEffects from 'services/products/product-quantity/effects';
-
+import userEffects from 'services/users/user/effects';
 
 export default function* rootSaga() {
   yield all([
-    ...productQuantityEffects,
+    ...userEffects,
   ]);
 }

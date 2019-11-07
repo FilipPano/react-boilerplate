@@ -4,11 +4,7 @@
 
 1. Run **`yarn install`** (Yarn is required on your local machine)
 
-1. Create a **`.env`** file in the project’s root and copy & paste the following:
-
-    ```
-    NODE_PATH=src/
-    ```
+1. Create a **`.env`** file in the project’s root and copy the variables from **`.env-example`**
 
 1. Run **`yarn start`** (This will start your project in dev environment)
 
@@ -28,13 +24,10 @@ We have a tree structure as following:
     > Contains all resources like images, videos etc.
 
 - **`components`**
-    > All components that are presentational (can be reused even in different applications) are stored here.
-
-- **`containers`**
-    > All components that contain the business logic of the application (are connected to the store or make sense only in this application) are stored here.
+    > All presentational components are stored here
 
 - **`global`**
-    > All variables (global styles too) that are used throughout the application are stored here.
+    > All global variables and styles that are used throughout the application are stored here
 
 - **`pages`**
     > All components that represent a React Route are stored here.
@@ -42,21 +35,23 @@ We have a tree structure as following:
     > All routes are stored inside the **`App.js`** file.
 
 - **`services`**
-    > All http requests and state management that the application should do is stored here.
+    > All http requests and global state management that the application has is stored here
     
     > Services are grouped based on the types of data and features that the application has (ex: **products, users**) and then further divided into sub-folders which contain a particular object or feature related to that type (ex: inside products we can have: **products-list, selected-product, favorite-products** etc.)
      
-    > Each sub-folder contains the **reducer**, **actions**, **effects** (if needed), **api** (if needed) and models (if needed)
+    > Each sub-folder contains the **reducer***, **actions***, **effects**, **api**, **models** and **hook** related to that object/feature
 
 - **`store`**
-    > Contains the **redux store**, **root reducer** and **root effect**.
+    > Contains the **redux store**, **root reducer** and **root effect**
 
 - **`utils`**
-    > Contains utility functions that can be used throughout the application.
+    > Contains utility classes that are used throughout the application
 
 ---
 
 ### Conventions
+
+- This project is built only with functional components using React hooks
 
 - Each component is put into a folder named the same as we would like to call the component (ex: **NavLink**)
 
@@ -95,7 +90,7 @@ We have a tree structure as following:
     /src
         /components
             /Divider
-            /form-elements
+            /form
                 /Input
                 /Select
                 /Checkbox
@@ -117,19 +112,7 @@ We have a tree structure as following:
                 _styles.scss
     ```
 
-- When exporting multiple functions or objects from one file, put them in a constant and then export the constant as default.
-
-    **Example:**
-    ```
-    const HomePage = '/';
-    const AboutPage = '/about';
-    
-    const Routes = { HomePage, AboutPage };
-    
-    export default Routes; 
-    ```
-
-- Absolute paths are used when importing something that is outside of the folder in which we are using the import (ex: importing assets inside a component or importing another component from the root components folder)
+- Absolute paths are used when importing something that is outside of the folder in which we are using the import (ex: importing assets or importing a service inside a component)
 
 - Relative paths are used when importing something that is within the same folder (ex: importing a component’s styles or importing a child component)
 
@@ -155,16 +138,28 @@ All files that should be ignored by eslint are specified inside **`.eslintignore
 
 ### Dependencies
 
-- **React Router** (page routing)
+- **react-router** (page routing)
 
-- **Redux** (storing application data)
+- **redux** (storing application data)
 
-- **Redux Saga** (async action watchers)
+- **redux-saga** (async redux middleware)
 
-- **Sass** (styling)
+- **node-sass** (styling)
 
-- **CSS Modules** (styling, comes out of the box with react scripts 2+)
+- **css-modules** (styling, comes out of the box with react scripts 2+)
 
-- **Axios** (http requests)
+- **axios** (http requests)
 
-- **Autoprefixer** (no need to add webkit, moz or any prefixes when styling).
+- **autoprefixer** (no need to add vendor prefixes when styling)
+
+- **classnames** (convenient way to add multiple class names with CSS Modules)
+
+### Dev Dependencies
+
+- **eslint-config-airbnb** (airbnb's eslint config)
+
+- **eslint-plugin-import** (eslint import config)
+
+- **husky** (run a script when committing)
+
+- **lint-staged** (run a script on git staged files)

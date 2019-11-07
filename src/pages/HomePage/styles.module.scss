@@ -6,5 +6,16 @@
   align-items: center;
   width: 100vw;
   height: 100vh;
+  color: #FFFFFF;
   background-color: $background-color;
+
+  .greeting {
+    display: grid;
+    justify-items: center;
+    width: 320px;
+  }
+
+  .user-button {
+    margin-top: 50px;
+  }
 }
