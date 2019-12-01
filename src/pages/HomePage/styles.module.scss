@@ -1,12 +1,12 @@
 @import '~global/styles';
 
-.home-page {
+.homePage {
   display: grid;
-  justify-items: center;
   align-items: center;
+  justify-items: center;
   width: 100vw;
   height: 100vh;
-  color: #FFFFFF;
+  color: #fff;
   background-color: $background-color;
 
   .greeting {
@@ -15,7 +15,7 @@
     width: 320px;
   }
 
-  .user-button {
+  .userButton {
     margin-top: 50px;
   }
 }

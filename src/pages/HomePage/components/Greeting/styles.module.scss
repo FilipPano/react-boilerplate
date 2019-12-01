@@ -1,10 +1,9 @@
 .greeting {
-
-  .user-name {
+  .userName {
     display: inline-block;
-    margin-left: 10px;
     width: fit-content;
     min-width: 100px;
+    margin-left: 10px;
     font-weight: bold;
     border-bottom: 1px solid white;
   }

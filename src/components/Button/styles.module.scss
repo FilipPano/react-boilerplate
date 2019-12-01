@@ -3,16 +3,16 @@
 .button {
   height: 40px;
   padding: 0 35px;
-  background-color: $main-color;
-  color: #FFFFFF;
+  color: #fff;
   font-family: $font-family;
   font-weight: 500;
+  background-color: $main-color;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
 
-.button:focus {
-  outline: none;
-  box-shadow: 0 0 2px #000000;
+  &:focus {
+    box-shadow: 0 0 2px #000;
+    outline: none;
+  }
 }

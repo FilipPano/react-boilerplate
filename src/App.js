@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { store } from 'store';
+import { HomePage } from 'pages/HomePage';
+import { HOME_PAGE } from 'global/routes';
 import { Provider } from 'react-redux';
-import store from 'store/store';
-import HomePage from 'pages/HomePage';
-import Routes from 'global/Routes';
 
 const App = () => (
   <Router>
@@ -11,7 +11,7 @@ const App = () => (
       <>
         <Route
           exact
-          path={Routes.HOME_PAGE}
+          path={HOME_PAGE}
           component={HomePage}
         />
       </>

@@ -1,12 +1,7 @@
-import axios from 'axios';
-import Http from 'utils/Http';
+import { getRequest } from 'utils/http';
 
-class UserAPI {
-  static URL = `${process.env.REACT_APP_BACKEND_API}/users`;
+const url = `${process.env.REACT_APP_BACKEND_API}/users`;
 
-  static getUser(userId) {
-    return Http.callAPI(() => axios.get(`${this.URL}/${userId}`));
-  }
+export function getUserAPI(userId) {
+  return getRequest(`${url}/${userId}`);
 }
-
-export default UserAPI;

@@ -1,12 +1,15 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { getUser } from 'services/users/user/actions';
+import { getUser } from './actions';
 
-const useUser = () => {
+export const useUser = () => {
   const { user, loading, error } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
 
-  return [() => dispatch(getUser()), { user, loading, error }];
+  return {
+    getUser: () => dispatch(getUser()),
+    user,
+    loading,
+    error,
+  };
 };
-
-export default useUser;

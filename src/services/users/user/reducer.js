@@ -1,21 +1,19 @@
 /**
- All  user properties
+ * User info
  */
 import { UserActions } from './actions';
-import User from './models/User';
 
 const initialState = {
-  user: new User({}),
+  user: null,
   loading: false,
   error: null,
 };
 
-export default function userReducer(state = initialState, action) {
+export function userReducer(state = initialState, action) {
   switch (action.type) {
     case UserActions.GET_USER:
       return {
         ...state,
-        user: new User({}),
         loading: true,
         error: null,
       };

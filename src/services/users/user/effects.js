@@ -1,30 +1,21 @@
-import { takeLatest, put } from 'redux-saga/effects';
+import { takeLatest, put, call } from 'redux-saga/effects';
 import { getUserFail, getUserSuccess, UserActions } from './actions';
-import UserAPI from './api';
+import { getUserAPI } from './api';
+import User from './models/User';
 
 function getRandomUserId() {
   return Math.floor(Math.random() * 10) + 1;
 }
 
 function* getUser() {
-  let apiCallFailed = false;
-
-  const data = yield UserAPI.getUser(getRandomUserId())
-    .then(res => res)
-    .catch(err => {
-      apiCallFailed = true;
-      return err;
-    });
-
-  if (apiCallFailed) {
-    yield put(getUserFail(data));
-  } else {
-    yield put(getUserSuccess(data));
+  try {
+    const user = yield call(getUserAPI, getRandomUserId());
+    yield put(getUserSuccess(new User(user)));
+  } catch (e) {
+    yield put(getUserFail(e));
   }
 }
 
-const userEffects = [
+export const userEffects = [
   takeLatest(UserActions.GET_USER, getUser),
 ];
-
-export default userEffects;

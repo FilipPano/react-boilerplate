@@ -1,4 +1,5 @@
 {
+  "parser": "babel-eslint",
   "extends": ["airbnb-base", "airbnb/rules/react"],
   "rules": {
     "react/jsx-filename-extension": [
@@ -16,6 +17,7 @@
     "no-underscore-dangle": 0,
     "import/imports-first": ["off", "off"],
     "import/newline-after-import": "error",
+    "import/prefer-default-export": "off",
     "linebreak-style": "off",
     "no-plusplus": "off",
     "padded-blocks": "off",
@@ -25,9 +27,20 @@
     }],
     "import/no-unresolved": "off",
     "import/no-absolute-path": "off",
-    "import/order": "off",
+    "import/order": ["warn",
+      {
+        "groups": [
+          "builtin",
+          "external",
+          "internal",
+          "parent",
+          "sibling",
+          "index"
+        ]
+      }],
     "import/named": "off",
     "no-shadow": "off",
+    "no-multiple-empty-lines": ["error", { "max": 1 }],
     "arrow-parens": "off",
     "no-async-promise-executor": "off",
     "object-curly-newline": "off",
@@ -50,6 +63,5 @@
     "FileReader": true,
     "Blob": true,
     "navigator": true
-  },
-  "parser": "babel-eslint"
+  }
 }

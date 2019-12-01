@@ -1,13 +1,11 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const Greeting = ({ userName }) => (
+export const Greeting = ({ userName }) => (
   <div className={styles.greeting}>
     Hello
-    <span className={styles['user-name']}>
-      {userName}
+    <span className={styles.userName}>
+      {userName || 'Unknown user'}
     </span>
   </div>
 );
-
-export default Greeting;

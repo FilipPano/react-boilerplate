@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.scss';
 
-const Button = ({ type = 'button', children, onClick }) => (
+export const Button = ({ type = 'button', children, onClick }) => (
   <button
     type={type}
     className={styles.button}
@@ -10,5 +10,3 @@ const Button = ({ type = 'button', children, onClick }) => (
     {children}
   </button>
 );
-
-export default Button;
