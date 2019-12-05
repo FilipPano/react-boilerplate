@@ -1,6 +1,7 @@
 import { getRequest } from 'utils/http';
+import { BACKEND_API } from 'global/environment';
 
-const url = `${process.env.REACT_APP_BACKEND_API}/users`;
+const url = `${BACKEND_API}/users`;
 
 export function getUserAPI(userId) {
   return getRequest(`${url}/${userId}`);
