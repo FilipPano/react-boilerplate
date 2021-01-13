@@ -1,15 +1,17 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import createSagaMiddleware from 'redux-saga';
-import { rootReducer } from 'store/reducer';
-import { rootSaga } from 'store/effect';
+import { configureStore } from '@reduxjs/toolkit';
+import { QueryCache } from 'react-query';
+import { rootReducer } from './reducer';
 
-const sagaMiddleware = createSagaMiddleware();
+export const store = configureStore({
+  reducer: rootReducer,
+});
 
-const reduxDevTools = window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : f => f;
-
-export const store = createStore(
-  rootReducer,
-  compose(applyMiddleware(sagaMiddleware), reduxDevTools),
-);
-
-sagaMiddleware.run(rootSaga);
+export const queryCache = new QueryCache({
+  defaultConfig: {
+    queries: {
+      staleTime: Infinity, // Change to milliseconds in case you want to refetch data in the background
+      cacheTime: Infinity, // Change to milliseconds in case you want to garbage collect unused data
+      retry: false,
+    },
+  },
+});

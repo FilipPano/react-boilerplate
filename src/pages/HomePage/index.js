@@ -6,7 +6,7 @@ import { Greeting } from './components/Greeting';
 import styles from './styles.module.scss';
 
 export const HomePage = () => {
-  const { getUser, user, loading } = useUser();
+  const { getUser, user, isLoading } = useUser();
 
   return (
     <div className={styles.homePage}>
@@ -16,7 +16,7 @@ export const HomePage = () => {
 
           <div className={styles.userButton}>
             <Button onClick={getUser}>
-              {loading ? 'Fetching...' : 'GET A USER'}
+              {isLoading ? 'Fetching...' : 'GET USER'}
             </Button>
           </div>
         </div>

@@ -2,11 +2,14 @@
 
 ### Project Setup
 
-1. Run **`yarn install`** (Yarn is required on your local machine)
+1. Run **`yarn install`** (yarn is required on your local machine)
 
-1. Create a **`.env`** file in the project’s root and copy the variables from **`.env-example`**
+1. Create a **`.env`** file in the project’s root and fill in the variables from **`.env-example`**
 
-1. Run **`yarn start`** (This will start your project in dev environment)
+1. Run **`yarn start`** (this will start your project in dev environment)
+
+#### Production
+1. Run **`yarn build`** to create a production build. The final output will be located in a **`/build`** folder.
 
 ---
 
@@ -15,37 +18,30 @@
 The project contains the following tree structure:
 
 - **`assets`**
-    > The project’s assets that are used throughout the application are stored here.
+  > Contains the project’s assets that are used throughout the application.
 
-    - **`icons`**
-    > Contains all icons as Components
-
-    - **`resources`**
-    > Contains all resources like images, videos etc.
+  - **`images`**
+  > Contains all images
 
 - **`components`**
-    > All presentational components are stored here
+  > Contains all reusable components
 
 - **`global`**
-    > All global variables and styles that are used throughout the application are stored here
+  > Contains all global variables and styles that are used throughout the application
 
 - **`pages`**
-    > All components that represent a React Route are stored here.
-    
-    > All routes are stored inside the **`App.js`** file.
+  > Contains all components that represent a React Route.
 
 - **`services`**
-    > All http requests and global state management that the application has is stored here
-    
-    > Services are grouped based on the types of data and features that the application has (ex: **products, users**) and then further divided into sub-folders which contain a particular object or feature related to that type (ex: inside products we can have: **products-list, selected-product, favorite-products** etc.)
-     
-    > Each sub-folder contains the **reducer***, **actions***, **models** **effects**, **api** and **hook** related to that object/feature
+  > All global state (server and client) is stored here
+
+  > The state is exposed via hooks to the components
 
 - **`store`**
-    > Contains the **redux store**, **root reducer** and **root effect**
+  > Contains the **redux store** for client side data management and **react-query cache** for server side data management
 
 - **`utils`**
-    > Contains utility functions that are used throughout the application
+  > Contains utility functions that are used throughout the application
 
 ---
 
@@ -59,20 +55,20 @@ The project contains the following tree structure:
 
 - If there are additional files that are needed for the component (animations, tests) they are put into their own folders inside the component’s folder.
 
-    **Example:**
+  **Example:**
     ```
     /NavLink
         /animations
             index.js
         /tests
-            NavLik.test.js
+            index.test.js
         index.js
         styles.module.scss
     ```
 
 - If a particular component is only used and only makes sense inside another component (For example we want to divide a component into multiple subcomponents for readability) then we create another **`components`** folder inside the parent and create the component there.
 
-    **Example:**
+  **Example:**
     ```
     /Header
         /components
@@ -85,7 +81,7 @@ The project contains the following tree structure:
 
 - Multiple components that have something in common (styling or context) can be grouped into a folder that is named after the thing that they have in common and is written in lowercase.
 
-    **Example:**
+  **Example:**
     ```
     /src
         /components
@@ -99,11 +95,11 @@ The project contains the following tree structure:
 
 - If a group of components have some styles in common then those styles are created inside the folder as: **`_styles.scss`**
 
-    These styles contain variables and mixins that are used by the components
-    
+  These styles contain variables and mixins that are used by the components
+
 - We can create an **index.js** as well to export all components from inside the folder
 
-    **Example:**
+  **Example:**
     ```
     /src
         /components
@@ -117,9 +113,7 @@ The project contains the following tree structure:
 
 - Use named exports instead of default exports
 
-- Absolute paths are used when importing something that is outside of the folder in which we are using the import (ex: importing assets or importing a service inside a component)
-
-- Relative paths are used when importing something that is within the same folder (ex: importing a component’s styles or importing a child component)
+- Both absolute and relative paths are used depending on which one is shortest
 
 - When importing global styles inside other sass files use absolute paths: **`@import '~global/styles'`**
 
@@ -129,7 +123,7 @@ The project contains the following tree structure:
 
 #### Eslint
 
-This project uses a customized Airbnb eslint config.
+This project uses Airbnb's eslint config and typescript-eslint.
 
 Install and configure an ESLint plugin for your IDE to be able to see all eslint errors.
 
@@ -157,16 +151,18 @@ If you find a certain rule to be invaluable and make the code worse, talk with t
 
 - **react-router-dom** (page routing)
 
-- **redux** (storing application data)
+- **redux** (storing client side data)
 
 - **react-redux** (react wrapper for redux)
 
-- **redux-saga** (async redux middleware)
+- **@reduxjs/toolkit** (redux config / removes boilerplate)
+
+- **react-query** (storing server side data)
 
 - **axios** (http requests)
 
-- **css-modules** (styling, comes out of the box with react scripts 2+)
+- **css-modules** (styling)
 
 - **autoprefixer** (no need to add vendor prefixes when styling)
 
-- **classnames** (convenient way to add multiple class names with CSS Modules)
+- **classnames** (convenient way to add multiple class names)

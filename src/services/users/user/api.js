@@ -1,8 +1,8 @@
 import { getRequest } from 'utils/http';
-import { BACKEND_API } from 'global/environment';
+import { Environment } from 'global/environment';
 
-const url = `${BACKEND_API}/users`;
+const url = `${Environment.BACKEND_API}/users`;
 
-export function getUserAPI(userId) {
-  return getRequest(`${url}/${userId}`);
+export function getUserAPI() {
+  return getRequest(`${url}/1`);
 }

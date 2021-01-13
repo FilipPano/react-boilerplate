@@ -1,1 +1,3 @@
-export const BACKEND_API = process.env.REACT_APP_BACKEND_API;
+export const Environment = {
+  BACKEND_API: process.env.REACT_APP_BACKEND_API,
+};

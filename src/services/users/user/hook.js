@@ -1,15 +1,21 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { getUser } from './actions';
+import { useQuery } from 'react-query';
+import { getUserAPI } from './api';
+
+const USER_QUERY_KEY = 'user';
 
 export const useUser = () => {
-  const { user, loading, error } = useSelector((state) => state.user);
-
-  const dispatch = useDispatch();
+  const { data, isLoading, error, refetch } = useQuery(
+    USER_QUERY_KEY,
+    getUserAPI,
+    {
+      enabled: false,
+    },
+  );
 
   return {
-    getUser: () => dispatch(getUser()),
-    user,
-    loading,
+    getUser: refetch,
+    user: data,
+    isLoading,
     error,
   };
 };
