@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { queryCache, store } from 'store';
 import { HomePage } from 'pages/HomePage';
-import { HOME_PAGE } from 'global/routes';
+import { Routes } from 'global/routes';
 import { Provider } from 'react-redux';
 import { ReactQueryCacheProvider } from 'react-query';
 
@@ -13,7 +13,7 @@ const App = () => (
         <Switch>
           <Route
             exact
-            path={HOME_PAGE}
+            path={Routes.HOME_PAGE}
             component={HomePage}
           />
         </Switch>
