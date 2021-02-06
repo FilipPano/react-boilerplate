@@ -10,6 +10,7 @@
     ],
     "react/prop-types": 0,
     "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
     "react/jsx-max-props-per-line": ["error", {
       "maximum": 1
     }],
